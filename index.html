@@ -97,8 +97,8 @@
 
     @media (min-width: 992px) {
       .hero-content {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 5rem;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 3rem;
       }
     }
 
@@ -167,184 +167,45 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      perspective: 1000px;
+      perspective: 1500px;
     }
 
     .phone-mockup {
       background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
-      border-radius: 45px;
-      width: 300px;
-      height: 610px;
+      width: 100%;
+      max-width: 360px; /* New max-width */
+      height: 735px;      /* New height for correct aspect ratio */
+      border-radius: 55px; /* Proportionally larger radius */
+      padding: 14px;       /* Proportionally larger padding */
       box-shadow:
-        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 30px 60px -15px rgba(0, 0, 0, 0.25),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      padding: 12px;
       position: relative;
-      transform: rotateY(-5deg) rotateX(2deg);
-      transition: transform 0.3s ease;
+      transform: rotateY(-4deg) rotateX(2deg); /* Slightly adjusted rotation */
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .phone-mockup:hover {
-      transform: rotateY(0deg) rotateX(0deg);
-    }
-
-    .phone-mockup::before {
-      content: '';
-      position: absolute;
-      top: 11px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 25px;
-      background: #0f172a;
-      border-radius: 0 0 20px 20px;
-      z-index: 10;
-    }
-
-    .phone-mockup::after {
-      content: '';
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 12px;
-      height: 12px;
-      background: #1e293b;
-      border-radius: 50%;
-      z-index: 11;
+      transform: rotateY(0deg) rotateX(0deg) scale(1.02);
     }
 
     .app-screen {
-      background: linear-gradient(165deg, var(--primaryLight) 0%, var(--primary) 50%, var(--primaryDark) 100%);
+      background: #0f172a; /* Simple background for video */
       width: 100%;
       height: 100%;
-      border-radius: 35px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 60px 20px 30px;
+      border-radius: 42px;
       position: relative;
       overflow: hidden;
     }
 
-    .app-screen::before {
-      content: '';
+    .app-video {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .app-header {
-      color: white;
-      margin-bottom: 30px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .app-header h2 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin: 0 0 0.25rem;
-      letter-spacing: -0.5px;
-    }
-
-    .app-header p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .mock-campaign-card {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      color: var(--onBackground);
-      padding: 1.25rem;
-      margin-bottom: 0.75rem;
-      border-radius: 16px;
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
-      position: relative;
-      z-index: 1;
-      animation: slideUp 0.6s ease-out backwards;
-    }
-
-    .mock-campaign-card:nth-child(2) {
-      animation-delay: 0.15s;
-    }
-
-    .mock-campaign-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .campaign-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primaryDark) 100%);
-      color: white;
-      padding: 0.35rem 0.75rem;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.3px;
-    }
-
-    .mock-campaign-card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--onBackground);
-    }
-
-    .mock-campaign-card p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: var(--onSurfaceVariant);
-      font-weight: 500;
-    }
-
-    .campaign-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0.75rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--outline);
-    }
-
-    .campaign-timer {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--warning);
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .campaign-action {
-      color: var(--primary);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures video fills the screen */
+      border-radius: 42px; /* Match the screen's border radius */
     }
 
     /* Section Styles */
@@ -560,30 +421,17 @@
 
       <div class="hero-visual">
         <div class="phone-mockup">
-          <div class="app-screen">
-            <div class="app-header">
-              <h2>Kampanyalar</h2>
-              <p>Sana özel 12 kampanya</p>
+            <div class="app-screen">
+                <video
+                class="app-video"
+                src="/assets/screenshot.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                poster="/assets/screenshot.png"
+                ></video>
             </div>
-            <div class="mock-campaign-card">
-              <span class="campaign-badge">AKARYAKIT</span>
-              <h3>Akaryakıt Alışverişlerine 500 TL Puan</h3>
-              <p>Shell, Opet, BP ve Total istasyonlarında geçerli</p>
-              <div class="campaign-footer">
-                <span class="campaign-timer">⏱ Son 3 gün</span>
-                <a href="#" class="campaign-action">Detaylar →</a>
-              </div>
-            </div>
-            <div class="mock-campaign-card">
-              <span class="campaign-badge">MARKET</span>
-              <h3>Market Alışverişlerine %40 İndirim</h3>
-              <p>Migros, Carrefour ve A101'de kullan</p>
-              <div class="campaign-footer">
-                <span class="campaign-timer">⏱ Son 5 gün</span>
-                <a href="#" class="campaign-action">Detaylar →</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -593,15 +441,15 @@
   <!-- Problem Agitation -->
   <section class="section container">
     <div class="problem-section">
-      <h2 class="section-title">Her ay yüzlerce liralık fırsat kaçırıyor olabilirsin</h2>
+      <h2 class="section-title">Her ay binlerce liralık fırsat kaçırıyor olabilirsin</h2>
       <p class="section-intro">
-        Çoğu kişi kredi kartı kampanyalarını takip etmek için her bankanın uygulamasını tek tek kontrol ediyor. Bu yöntem artık işe yaramıyor.
+        Kredi kartı kampanyalarını takip etmek için her bankanın uygulamasını tek tek kontrol mu ediyorsun? Artık buna ihtiyacın yok.
       </p>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="problem-icon">💸</div>
           <h3>Para kaybediyorsun</h3>
-          <p>Hangi kartla ne zaman alışveriş yapacağını hatırlayamıyorsun. Sonuç: Kullanmadığın kampanyalar yüzünden ayda ortalama 500-1000 TL kaybediyorsun.</p>
+          <p>Kartına sahip olmana rağmen kullanmadığın kampanyalar yüzünden masada binlerce TL bırakıyorsun. Kazandığın puanları harcamayı unutuyorsun.</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">⏰</div>
