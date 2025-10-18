@@ -25,7 +25,7 @@
 
   <style>
     :root {
-      --background: #fafbfc;
+      --background: rgb(239, 246, 255); /* Updated Color */
       --onBackground: #0f172a;
       --primary: rgb(37, 99, 235);
       --primaryDark: #1d4ed8;
@@ -48,7 +48,7 @@
     body {
       margin: 0;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, #fafbfc 0%, #f1f5f9 100%);
+      background-color: var(--background); /* Updated Property */
       color: var(--onBackground);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -231,7 +231,7 @@
       margin: 0 auto 3.5rem;
       line-height: 1.7;
     }
-    
+
     .section-card {
         background: var(--surface);
         border-radius: 24px;
@@ -319,7 +319,7 @@
       line-height: 1.7;
       margin: 0;
     }
-    
+
     /* Features Section */
     .features-grid {
       display: grid;
@@ -400,8 +400,9 @@
     }
     .bank-logo {
         height: 40px;
-        filter: grayscale(100%);
-        opacity: 0.7;
+        width: auto;
+        filter: grayscale(10%);
+        opacity: 0.6;
         transition: all 0.3s ease;
     }
     .bank-logo:hover {
@@ -440,6 +441,9 @@
         margin-bottom: 2.5rem;
     }
 
+    .cta-section .store-buttons {
+        justify-content: center;
+    }
 
     /* FAQ Section */
     .faq-list {
@@ -505,6 +509,8 @@
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.2s ease;
+      white-space: nowrap;
+      display: inline-block;
     }
 
     .footer a:hover {
@@ -573,7 +579,7 @@
         <div class="problem-card">
           <div class="problem-icon">⏰</div>
           <h3>Zaman kaybediyorsun</h3>
-          <p>5-6 farklı banka uygulamasını açıp kampanyalara bakmak her seferinde 15-20 dakikanı alıyor. Haftada birkaç kez tekrarladığında saatlerce zaman kaybı demek.</p>
+          <p>Farklı banka uygulamalarını açıp kampanyalara bakmak her seferinde dakikalarını alıyor. Bu işlemi sıkça tekrarladığında saatlerce zaman kaybı demek.</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">😤</div>
@@ -648,15 +654,17 @@
     <h2 class="section-title">Tüm Büyük Bankalarla Uyumlu</h2>
     <p class="section-intro">Türkiye'de en çok kullanılan bankaların kampanyalarını anlık olarak takip ediyoruz.</p>
     <div class="banks-grid">
-        <!-- Replace src with actual logo paths -->
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=Akbank" alt="Akbank Axess">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=Garanti" alt="Garanti BBVA Bonus">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=İş+Bankası" alt="İş Bankası Maximum">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=Yapı+Kredi" alt="Yapı Kredi Worldcard">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=Ziraat" alt="Ziraat Bankası Bankkart">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=Halkbank" alt="Halkbank Paraf">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=QNB" alt="QNB Finansbank">
-        <img class="bank-logo" src="https://via.placeholder.com/150x40/E2E8F0/64748B?text=TEB" alt="TEB Bonus">
+        <img class="bank-logo" src="/assets/cardlogos/axess.png" alt="Akbank Axess">
+        <img class="bank-logo" src="/assets/cardlogos/bankkart.png" alt="Ziraat Bankası Bankkart">
+        <img class="bank-logo" src="/assets/cardlogos/bonus.png" alt="Garanti BBVA Bonus">
+        <img class="bank-logo" src="/assets/cardlogos/deniz-bonus.png" alt="DenizBank Bonus">
+        <img class="bank-logo" src="/assets/cardlogos/maximum.png" alt="İş Bankası Maximum">
+        <img class="bank-logo" src="/assets/cardlogos/on.png" alt="Burgan Bank On">
+        <img class="bank-logo" src="/assets/cardlogos/paraf.png" alt="Halkbank Paraf">
+        <img class="bank-logo" src="/assets/cardlogos/qnb.png" alt="QNB Finansbank">
+        <img class="bank-logo" src="/assets/cardlogos/teb-bonus.png" alt="TEB Bonus">
+        <img class="bank-logo" src="/assets/cardlogos/vakifbank.png" alt="Vakıfbank Vakıfkart">
+        <img class="bank-logo" src="/assets/cardlogos/worldcard.webp" alt="Yapı Kredi Worldcard">
     </div>
     <p class="banks-cta">Kullandığın kartı göremedin mi? <a href="mailto:iletisim@dekartkampanya.com.tr?subject=Yeni%20Banka%20Talebi">Bize bildir</a>, listemize ekleyelim.</p>
   </section>
@@ -673,14 +681,6 @@
         <div class="faq-item">
           <h3 class="faq-question">Kart bilgilerimi paylaşmam gerekiyor mu?</h3>
           <p class="faq-answer">Hayır, kesinlikle gerekmiyor. Dekart Kampanya kart numaranı, şifreni veya herhangi bir finansal bilgini istemez. Sadece hangi bankaların kartlarına sahip olduğunu seçmen yeterli, geri kalan her şey otomatik olarak karşına geliyor.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Kampanyalar güncel mi, nasıl güncelleniyor?</h3>
-          <p class="faq-answer">Tüm kampanyalar resmi kaynaklardan anlık olarak güncelleniyor. Sistemimiz günde birkaç kez kontrol yapıyor, böylece her zaman en güncel kampanyaları görüyorsun. Biten kampanyalar otomatik olarak kaldırılıyor.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Hangi bankaları destekliyorsunuz?</h3>
-          <p class="faq-answer">Şu anda Türkiye'deki tüm büyük bankaları ve kart programlarını destekliyoruz. Desteklediğimiz bankaları yukarıdaki listede görebilirsin. Sürekli yeni bankalar ekliyoruz.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Verilerim güvende mi?</h3>
@@ -719,4 +719,4 @@
   async
   src="https://cdn.jsdelivr.net/npm/store-badge@1/build/bundle.js"
 ></script>
-</html>```
+</html>
