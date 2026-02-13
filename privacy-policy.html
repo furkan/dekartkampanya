@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twin Tails Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #1d2330;
+      --muted: #4d5b73;
+      --border: #dce2ee;
+      --accent: #1f6feb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 16px 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      color: #162033;
+    }
+
+    p, li {
+      color: var(--text);
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5ff;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background: #eff3fb;
+      border: 1px solid #d9e2f2;
+      border-radius: 6px;
+      padding: 1px 5px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="card">
+      <h1>Privacy Policy</h1>
+      <p class="meta">
+        App: <strong>Twin Tails</strong><br>
+        Publisher: <strong>Korvex Studio</strong><br>
+        Last Updated: <strong>February 13, 2026</strong>
+      </p>
+
+      <p>
+        This Privacy Policy explains how Twin Tails ("we", "us", or "our") collects, uses, and shares information when you use our mobile game.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+
+      <h3>1.1 Information Stored Locally on Your Device</h3>
+      <p>We store gameplay and settings data on your device to make the game work, such as:</p>
+      <ul>
+        <li>Level progress and game state (for example: current level, coins, lives, refill time)</li>
+        <li>Inventory and rewards (for example: boosters, stars/yarn, daily reward streaks, unlocked entries)</li>
+        <li>Game settings (for example: music/SFX levels, haptics, swipe visuals)</li>
+      </ul>
+      <p>
+        This local data is saved using Unity local storage mechanisms (such as <code>PlayerPrefs</code> and local JSON save files).
+      </p>
+
+      <h3>1.2 Analytics Data (Unity Analytics)</h3>
+      <p>
+        We use Unity Analytics to understand gameplay performance and improve the game experience.
+      </p>
+      <p>Based on the current app implementation, analytics events include:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Parameters Sent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>levelStart</code></td>
+            <td><code>levelIndex</code></td>
+          </tr>
+          <tr>
+            <td><code>levelComplete</code></td>
+            <td><code>levelIndex</code>, <code>movesRemaining</code></td>
+          </tr>
+          <tr>
+            <td><code>levelFail</code></td>
+            <td><code>levelIndex</code>, <code>reason</code></td>
+          </tr>
+          <tr>
+            <td><code>tutorialComplete</code></td>
+            <td><code>lessonId</code></td>
+          </tr>
+          <tr>
+            <td><code>resourceSpent</code></td>
+            <td><code>resource</code>, <code>amount</code>, <code>reason</code></td>
+          </tr>
+          <tr>
+            <td><code>resourceGained</code></td>
+            <td><code>resource</code>, <code>amount</code>, <code>reason</code></td>
+          </tr>
+          <tr>
+            <td><code>adShow</code></td>
+            <td><code>adType</code>, <code>network</code>, <code>placement</code></td>
+          </tr>
+          <tr>
+            <td><code>adReward</code></td>
+            <td><code>adType</code>, <code>network</code>, <code>placement</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        We do not intentionally send your name, email address, phone number, or similar direct identifiers through these events.
+      </p>
+
+      <h3>1.3 Advertising Data (Unity LevelPlay)</h3>
+      <p>
+        We use Unity LevelPlay mediation to show banner and rewarded ads. Ad partners may process technical data (such as device identifiers, IP address, approximate location inferred from IP, ad interaction data, and diagnostic data) to deliver ads, measure performance, and prevent fraud.
+      </p>
+      <p>
+        Depending on your region, device settings, and ad partner policies, ads may be personalized or non-personalized.
+      </p>
+
+      <h3>1.4 Data We Do Not Intentionally Collect Directly</h3>
+      <p>
+        We do not require account registration and we do not intentionally collect your real name, postal address, or email address in the app.
+      </p>
+
+      <h2>2. How We Use Information</h2>
+      <ul>
+        <li>To operate and maintain core gameplay features</li>
+        <li>To save your progress and preferences</li>
+        <li>To analyze game usage and improve balancing, stability, and content</li>
+        <li>To display ads and provide rewarded ad features</li>
+        <li>To detect abuse, fraud, or technical issues</li>
+      </ul>
+
+      <h2>3. Third-Party Services</h2>
+      <p>We currently use the following third-party services:</p>
+      <ul>
+        <li>Unity Analytics: <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
+        <li>Unity LevelPlay (Advertising/Mediation): <a href="https://unity.com/legal/privacy-policy">https://unity.com/legal/privacy-policy</a></li>
+      </ul>
+      <p>
+        These providers may process data under their own privacy policies.
+      </p>
+
+      <h2>4. Data Retention</h2>
+      <p>
+        Local gameplay data remains on your device until you clear app data or uninstall the app. Retention of analytics and advertising-related data is governed by the respective third-party providers.
+      </p>
+
+      <h2>5. Children’s Privacy</h2>
+      <p>
+        Twin Tails is not specifically directed to children under 13. However, children may still play the game.
+      </p>
+      <p>
+        We do not knowingly collect personal information directly from children. If you are a parent or guardian and believe a child has provided personal information, contact us and we will review and address the request.
+      </p>
+
+      <h2>6. Your Choices</h2>
+      <ul>
+        <li>You can stop all data collection by uninstalling the app.</li>
+        <li>You can clear locally stored app data through your device settings.</li>
+        <li>You can limit ad tracking through your iOS/Android privacy settings.</li>
+      </ul>
+
+      <h2>7. International Data Transfers</h2>
+      <p>
+        Third-party providers may process data on servers located in countries outside your own. Those providers are responsible for handling such transfers according to applicable law.
+      </p>
+
+      <h2>8. Security</h2>
+      <p>
+        We use reasonable technical and organizational measures appropriate to the nature of the data we process. However, no method of electronic storage or transmission is completely secure.
+      </p>
+
+      <h2>9. Changes to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. We will post the updated version with a revised "Last Updated" date.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        If you have any questions about this Privacy Policy, contact us at:<br>
+        <a href="mailto:furkanaldemir@gmail.com">furkanaldemir@gmail.com</a>
+      </p>
+    </article>
+  </main>
+</body>
+</html>
